@@ -1,0 +1,33 @@
+<h2>The Component 1 in NG App1</h2>
+<div>
+    {{message}}
+</div>
+<br />
+<input type="text" [(ngModel)]="message" />
+<br />
+<input type="button" value="Send Message" (click)="sendMessage()" />
+<br />
+<table class="table table-danger table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Product Row Id</td>
+            <td>Product Id</td>
+            <td>Product Name</td>
+            <td>Category Name</td>
+            <td>Manufacturer</td>
+            <td>Description</td>
+            <td>Base Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prd of products" (click)="tableRowClick(prd)">
+            <td>{{prd.ProductRowId}}</td>
+            <td>{{prd.ProductId}}</td>
+            <td>{{prd.ProductName}}</td>
+            <td>{{prd.CategoryName}}</td>
+            <td>{{prd.Manufacturer}}</td>
+            <td>{{prd.Description}}</td>
+            <td>{{prd.BasePrice}}</td>
+        </tr>
+    </tbody>
+</table>
